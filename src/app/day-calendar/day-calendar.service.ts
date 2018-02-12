@@ -93,10 +93,14 @@ export class DayCalendarService {
           currentDay: current.isSame(today, 'day'),
           disabled: this.isDateDisabled(current, config)
         });
-        current.add(1, 'day');
+        
 
         if (current.format('HH') !== '00') {
           current.startOf('day').add(1, 'day');
+        }
+        else
+        {
+          current.add(1, 'day');
         }
 
         return array;
